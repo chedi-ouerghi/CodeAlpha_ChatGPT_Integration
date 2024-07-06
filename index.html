@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      color: #555;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 0.8em;
+      margin-bottom: 2em;
+    }
+    .chat-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    .chat-icon:hover {
+      background-color: #0056b3;
+    }
+    .gif {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>CHAT BOT</h1>
+  <p>Click on the right bottom icon for ChatGPT integration.</p>
+
+  <button class="chat-icon">
+    <span class="material-symbols-outlined">chat</span>
+  </button>
+
+  <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" class="gif" style="top: 10%; left: 10%;">
+  <img src="https://media.giphy.com/media/26BRBupa9K0CXD12s/giphy.gif" class="gif" style="top: 20%; left: 80%;">
+  <img src="https://media.giphy.com/media/l3vR85PnGsBwu1PFK/giphy.gif" class="gif" style="top: 70%; left: 30%;">
+  <img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" class="gif" style="top: 60%; left: 60%;">
+
+  <script type="text/javascript">
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6688773c515137fa4d3624f2' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>
